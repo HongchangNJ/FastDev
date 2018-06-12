@@ -1,0 +1,84 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    defaultConfig {
+        applicationId "com.han.demo"
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode rootProject.ext.versionCode
+        versionName rootProject.ext.versionName
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
+            buildConfigField "String", "HOST", project.HOST_RELEASE
+            buildConfigField "String", "CDN_HOST", project.CDN_HOST_RELEASE
+            buildConfigField "String", "IMAGE_UPLOAD_HOST", project.IMAGE_UPLOAD_HOST_RELEASE;
+            buildConfigField "String", "IMAGE_DOWNLOAD_HOST", project.IMAGE_DOWNLOAD_HOST_RELEASE;
+        }
+
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
+            buildConfigField "String", "HOST", project.HOST_RELEASE
+            buildConfigField "String", "CDN_HOST", project.CDN_HOST_RELEASE
+            buildConfigField "String", "IMAGE_UPLOAD_HOST", project.IMAGE_UPLOAD_HOST_RELEASE;
+            buildConfigField "String", "IMAGE_DOWNLOAD_HOST", project.IMAGE_DOWNLOAD_HOST_RELEASE;
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+configurations.all {
+    // 版本统一
+    resolutionStrategy {
+        force "com.android.support:recyclerview-v7:$rootProject.ext.supportVersion"
+        force "com.android.support:appcompat-v7:$rootProject.ext.supportVersion"
+        force "com.android.support:support-compat:$rootProject.ext.supportVersion"
+        force "com.android.support:design:$rootProject.ext.supportVersion"
+        force "com.android.support:support-fragment:$rootProject.ext.supportVersion"
+        force "com.android.support:support-core-utils:$rootProject.ext.supportVersion"
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    // module dependencies
+    implementation project(':uikit')
+    implementation project(':utils')
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    implementation "com.android.support:appcompat-v7:${rootProject.ext.supportVersion}"
+    implementation 'com.android.support.constraint:constraint-layout:1.1.1'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    // retrofit & okhttp
+    implementation 'com.squareup.retrofit2:retrofit:2.1.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.1.0'
+    implementation('com.squareup.retrofit2:adapter-rxjava:2.1.0') {
+        exclude group: 'io.reactivex'
+    }
+    implementation 'com.squareup.retrofit2:converter-scalars:2.1.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.8.1'
+    implementation 'io.reactivex:rxandroid:1.2.0'
+
+    // butterknife
+    compile 'com.jakewharton:butterknife:7.0.1'
+    annotationProcessor 'com.jakewharton:butterknife:7.0.1'
+
+    compile 'org.greenrobot:eventbus:3.0.0'
+
+}

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/refresh_circle"
+        android:layout_width="35dp"
+        android:layout_height="23dp"
+        android:layout_gravity="center"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/pulling_image"/>
+
+    <ImageView
+        android:id="@+id/refreshing_imageview"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:scaleType="centerCrop"
+        android:visibility="invisible"
+        android:layout_gravity="center" />
+</FrameLayout>
