@@ -1,4 +1,4 @@
-package com.han.base.mvp.base;
+package com.han.base.mvp;
 
 import android.content.Context;
 import com.han.base.net.Response;

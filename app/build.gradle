@@ -81,4 +81,12 @@ dependencies {
 
     compile 'org.greenrobot:eventbus:3.0.0'
 
+    // https://github.com/CymChad/BaseRecyclerViewAdapterHelper
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.40'
+
+    // 腾讯qmui
+    implementation 'com.qmuiteam:qmui:1.1.3'
+    // 首页底部tab
+    implementation 'com.github.chaychan:BottomBarLayout:1.0.1'
+
 }

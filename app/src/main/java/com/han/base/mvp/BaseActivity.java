@@ -1,4 +1,4 @@
-package com.han.base.mvp.base;
+package com.han.base.mvp;
 
 import android.annotation.TargetApi;
 import android.app.Activity;

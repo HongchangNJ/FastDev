@@ -1,18 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.han.demo.MainActivity">
+    tools:context="com.han.demo.MainActivity"
+    android:orientation="vertical">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
 
-</android.support.constraint.ConstraintLayout>
+    <com.chaychan.library.BottomBarLayout
+        android:id="@+id/bottom_bar"
+        android:layout_height="50dp"
+        android:layout_width="match_parent">
+
+        <com.chaychan.library.BottomBarItem
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:iconNormal="@mipmap/ic_launcher"
+            app:iconSelected="@mipmap/ic_launcher"
+            app:itemMarginTop="4dp"
+            app:itemText="@string/tab_home"
+            app:itemTextSize="10sp"
+            app:openTouchBg="true"
+            app:textColorNormal="@color/tab_unselected_color"
+            app:textColorSelected="@color/colorPrimary"
+            app:touchDrawable="@drawable/selector_bottom_tab"/>
+
+        <com.chaychan.library.BottomBarItem
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:iconNormal="@mipmap/ic_launcher"
+            app:iconSelected="@mipmap/ic_launcher"
+            app:itemMarginTop="4dp"
+            app:itemText="@string/tab_control_panel"
+            app:itemTextSize="10sp"
+            app:openTouchBg="true"
+            app:textColorNormal="@color/tab_unselected_color"
+            app:textColorSelected="@color/colorPrimary"
+            app:touchDrawable="@drawable/selector_bottom_tab"/>
+
+        <com.chaychan.library.BottomBarItem
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:iconNormal="@mipmap/ic_launcher"
+            app:iconSelected="@mipmap/ic_launcher"
+            app:itemMarginTop="4dp"
+            app:itemText="@string/tab_mine"
+            app:itemTextSize="10sp"
+            app:openTouchBg="true"
+            app:textColorNormal="@color/tab_unselected_color"
+            app:textColorSelected="@color/colorPrimary"
+            app:touchDrawable="@drawable/selector_bottom_tab"/>
+    </com.chaychan.library.BottomBarLayout>
+</LinearLayout>

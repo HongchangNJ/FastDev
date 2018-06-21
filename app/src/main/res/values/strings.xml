@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">HanUI</string>
+
+    <!--首页Tab-->
+    <string name="tab_home">创亿云</string>
+    <string name="tab_control_panel">控制台</string>
+    <string name="tab_mine">我的</string>
 </resources>

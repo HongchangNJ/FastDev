@@ -1,4 +1,4 @@
-package com.han.base.mvp.base;
+package com.han.base.mvp;
 
 import rx.Observable;
 import rx.Subscriber;
