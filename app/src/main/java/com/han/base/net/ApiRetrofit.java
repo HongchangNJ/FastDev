@@ -1,6 +1,6 @@
 package com.han.base.net;
 
-import com.dotwin.framework.utils.NetworkUtils;
+import com.han.framework.utils.NetworkUtils;
 import com.google.gson.GsonBuilder;
 import com.han.base.app.BaseApplication;
 

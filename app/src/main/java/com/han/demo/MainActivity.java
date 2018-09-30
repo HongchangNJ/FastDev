@@ -2,11 +2,11 @@ package com.han.demo;
 
 import android.support.v4.view.ViewPager;
 
-import com.chaychan.library.BottomBarLayout;
 import com.han.base.mvp.BaseActivity;
 import com.han.base.mvp.BaseFragment;
 import com.han.base.mvp.BasePresenter;
 import com.han.base.ui.adapter.MainTabAdapter;
+import com.han.base.ui.view.bottomlayout.BottomBarLayout;
 import com.han.demo.ui.fragment.home.ControlFragment;
 import com.han.demo.ui.fragment.home.HomeFragment;
 import com.han.demo.ui.fragment.home.MineFragment;
