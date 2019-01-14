@@ -24,19 +24,8 @@ public class HomeAdapter extends BaseMultiItemQuickAdapter<HomeItemInterface, Ho
     }
 
     @Override
-    protected HomeViewHolder createBaseViewHolder(View itemView) {
-        return new HomeViewHolder(itemView);
-    }
-
-    @Override
     protected void convert(HomeViewHolder helper, HomeItemInterface item) {
-
-    }
-
-
-    @Override
-    public void onBindViewHolder(HomeViewHolder holder, int position) {
-
+        //super.convert(helper, item);yebu
     }
 
     public static class HomeViewHolder extends BaseViewHolder {

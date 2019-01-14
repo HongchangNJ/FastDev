@@ -8,8 +8,11 @@ import android.view.View;
 import com.han.base.mvp.BaseFragment;
 import com.han.base.mvp.BasePresenter;
 import com.han.demo.R;
+import com.han.demo.ui.adapter.home.BannerItem;
 import com.han.demo.ui.adapter.home.HomeAdapter;
 import com.han.demo.ui.adapter.home.HomeItemInterface;
+import com.han.demo.ui.adapter.home.TestAdapter;
+import com.han.demo.ui.adapter.home.TitleItem;
 import com.han.uikit.refresh.BGADotwinRefreshViewHolder;
 import com.han.uikit.refresh.BGARefreshLayout;
 
@@ -34,6 +37,9 @@ public class HomeFragment extends BaseFragment implements BGARefreshLayout.BGARe
     private List<HomeItemInterface> mDataList = new ArrayList<>();
     private HomeAdapter mAdapter;
 
+    private TestAdapter mTestAdapter;
+    private List<String> mTestData = new ArrayList<>();
+
     public static HomeFragment newInstance() {
 
         Bundle args = new Bundle();
@@ -50,6 +56,14 @@ public class HomeFragment extends BaseFragment implements BGARefreshLayout.BGARe
         initRecyclerView();
     }
 
+    @Override
+    public void initData() {
+        super.initData();
+        mTestData.add("Banner");
+        mTestData.add("Title");
+        mTestAdapter.notifyDataSetChanged();
+    }
+
     // 刷新控件初始化
     private void initRefreshLayout() {
         BGADotwinRefreshViewHolder viewHolder = new BGADotwinRefreshViewHolder(getActivity(), false);
@@ -63,8 +77,11 @@ public class HomeFragment extends BaseFragment implements BGARefreshLayout.BGARe
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         mRecyclerView.setLayoutManager(layoutManager);
 
-        mAdapter = new HomeAdapter(mDataList);
-        mRecyclerView.setAdapter(mAdapter);
+        /*mAdapter = new HomeAdapter(mDataList);
+        mRecyclerView.setAdapter(mAdapter);*/
+
+        mTestAdapter = new TestAdapter(mTestData);
+        mRecyclerView.setAdapter(mTestAdapter);
     }
 
 

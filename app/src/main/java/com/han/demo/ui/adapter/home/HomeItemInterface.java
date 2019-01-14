@@ -7,6 +7,7 @@ import com.chad.library.adapter.base.entity.MultiItemEntity;
  * 2018/6/19
  */
 public interface HomeItemInterface extends MultiItemEntity {
+    int ITEM_BANNER = 99;
     int ITEM_HEADER = 100;
     int ITEM_TITLE = 101;
     int ITEM_DEVICE = 102;

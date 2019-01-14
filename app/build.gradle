@@ -92,4 +92,7 @@ dependencies {
     // 腾讯qmui
     implementation 'com.qmuiteam:qmui:1.1.3'
 
+    //implementation 'cn.bingoogolapple:bga-banner:2.25@aar'
+    implementation 'pub.devrel:easypermissions:2.0.0'
+
 }
