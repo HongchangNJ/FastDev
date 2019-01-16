@@ -76,7 +76,7 @@ public class MainActivity extends BaseActivity implements EasyPermissions.Permis
     @Override
     protected void onResume() {
         super.onResume();
-        String[] perms = {Manifest.permission.CAMERA, Manifest.permission.ACCESS_FINE_LOCATION};
+        /*String[] perms = {Manifest.permission.CAMERA, Manifest.permission.ACCESS_FINE_LOCATION};
 
         EasyPermissions.requestPermissions(
                 new PermissionRequest.Builder(this, RC_CAMERA_AND_LOCATION, perms)
@@ -84,7 +84,7 @@ public class MainActivity extends BaseActivity implements EasyPermissions.Permis
                         .setPositiveButtonText("OK")
                         .setNegativeButtonText("cancel")
                         //.setTheme(R.style.my_fancy_style)
-                        .build());
+                        .build());*/
     }
 
     @Override
@@ -93,7 +93,7 @@ public class MainActivity extends BaseActivity implements EasyPermissions.Permis
         EasyPermissions.onRequestPermissionsResult(requestCode, permissions, grantResults, this);
     }
 
-    @AfterPermissionGranted(RC_CAMERA_AND_LOCATION)
+    /*@AfterPermissionGranted(RC_CAMERA_AND_LOCATION)
     private void methodRequiresTwoPermission() {
         String[] perms = {Manifest.permission.CAMERA, Manifest.permission.ACCESS_FINE_LOCATION};
         if (EasyPermissions.hasPermissions(this, perms)) {
@@ -104,7 +104,7 @@ public class MainActivity extends BaseActivity implements EasyPermissions.Permis
             EasyPermissions.requestPermissions(this, "相机和位置权限",
                     RC_CAMERA_AND_LOCATION, perms);
         }
-    }
+    }*/
 
     @Override
     public void onPermissionsGranted(int requestCode, @NonNull List<String> perms) {
